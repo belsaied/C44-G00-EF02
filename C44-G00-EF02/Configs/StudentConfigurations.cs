@@ -13,7 +13,7 @@ namespace C44_G00_EF02.Configs
     {
         public void Configure(EntityTypeBuilder<Student> builder)
         {
-
+            builder.ToTable("Students");
             builder.HasKey(s => s.ID);
 
             builder.Property(s => s.FName)
@@ -31,10 +31,17 @@ namespace C44_G00_EF02.Configs
             builder.Property(s => s.Age)
                 .IsRequired();
 
-            // I Don't know how to apply the Range of Age here so i will do it with Data Annotations.
-            //Note: I will Add DbSet for it .
+            builder.HasCheckConstraint("CK_Student_Age", "Age BETWEEN 18 AND 60");
+
+
             builder.Property(s => s.Dep_Id)
                 .IsRequired();
+
+            // Foreign Key Relationship
+            builder.HasOne(s => s.Department)
+                .WithMany(d => d.Students)
+                .HasForeignKey(s => s.Dep_Id)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

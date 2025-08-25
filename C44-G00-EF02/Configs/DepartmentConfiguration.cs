@@ -31,6 +31,13 @@ namespace C44_G00_EF02.Configs
                 .IsRequired();
 
             builder.HasCheckConstraint("CK_Department_HiringDate", "HiringDate <= GETDATE()");
+
+            // [Self-relationship] Foreign Key (Department Manager)
+            builder.HasOne(d => d.Manager)
+                .WithOne(i => i.ManagedDepartment)
+                .HasForeignKey<Department>(d => d.Ins_ID)
+                .OnDelete(DeleteBehavior.SetNull);
+            // i use setNull becuase when deleting a manager so it won't occur error because it manages id=5 for example just let it null until we have new manager.
         }
     }
 }

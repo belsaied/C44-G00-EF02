@@ -19,6 +19,13 @@ namespace C44_G00_EF02.DbContexts
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
-        DbSet<Student> Students { get; set; }
+        // DbSets
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Instructor> Instructors { get; set; }
+        public DbSet<Topic> Topics { get; set; }
+        public DbSet<StudCourse> StudCourses { get; set; }
+        public DbSet<CourseInst> CourseInstructors { get; set; }
     }
 }

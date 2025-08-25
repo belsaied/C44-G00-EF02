@@ -12,5 +12,10 @@ namespace C44_G00_EF02.Models
         public string Name { get; set; }
         public int? Ins_ID { get; set; }
         public DateTime HiringDate { get; set; }
+
+        // Navigation Properties
+        public Instructor? Manager { get; set; }
+        public ICollection<Student> Students { get; set; } = new HashSet<Student>();
+        public ICollection<Instructor> Instructors { get; set; } = new HashSet<Instructor>();
     }
 }

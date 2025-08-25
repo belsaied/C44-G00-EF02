@@ -10,5 +10,8 @@ namespace C44_G00_EF02.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
+
+        // Navigation Properties
+        public ICollection<Course> Courses { get; set; } = new HashSet<Course>();
     }
 }

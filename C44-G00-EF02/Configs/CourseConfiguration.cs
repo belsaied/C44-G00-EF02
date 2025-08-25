@@ -35,6 +35,12 @@ namespace C44_G00_EF02.Configs
 
             builder.Property(c => c.Top_ID)
                 .IsRequired();
+
+            // Foreign Key Relationship
+            builder.HasOne(c => c.Topic)
+                .WithMany(t => t.Courses)
+                .HasForeignKey(c => c.Top_ID)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

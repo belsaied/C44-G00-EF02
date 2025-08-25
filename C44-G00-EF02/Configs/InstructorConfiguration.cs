@@ -39,6 +39,12 @@ namespace C44_G00_EF02.Configs
 
             builder.Property(i => i.Dept_ID)
                 .IsRequired();
+
+            // Foreign Key Relationship
+            builder.HasOne(i => i.Department)
+                .WithMany(d => d.Instructors)
+                .HasForeignKey(i => i.Dept_ID)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
