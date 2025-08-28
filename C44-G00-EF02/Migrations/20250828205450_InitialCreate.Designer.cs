@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace C44_G00_EF02.Migrations
 {
     [DbContext(typeof(ITIDbContext))]
-    [Migration("20250825194135_ApplyingRelationships")]
-    partial class ApplyingRelationships
+    [Migration("20250828205450_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
