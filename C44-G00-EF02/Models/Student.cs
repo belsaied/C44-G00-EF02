@@ -18,7 +18,7 @@ namespace C44_G00_EF02.Models
         public int Dep_Id { get; set; }
 
         // Navigation Properties
-        public Department Department { get; set; }
-        public ICollection<StudCourse> StudCourses { get; set; } = new HashSet<StudCourse>();
+        public virtual Department Department { get; set; }
+        public virtual ICollection<StudCourse> StudCourses { get; set; } = new HashSet<StudCourse>();
     }
 }

@@ -15,8 +15,8 @@ namespace C44_G00_EF02.Models
         public int Top_ID { get; set; }
 
         // Navigation Properties
-        public Topic Topic { get; set; }
-        public ICollection<StudCourse> StudCourses { get; set; } = new HashSet<StudCourse>();
-        public ICollection<CourseInst> CourseInstructors { get; set; } = new HashSet<CourseInst>();
+        public virtual Topic Topic { get; set; }
+        public virtual ICollection<StudCourse> StudCourses { get; set; } = new HashSet<StudCourse>();
+        public virtual ICollection<CourseInst> CourseInstructors { get; set; } = new HashSet<CourseInst>();
     }
 }

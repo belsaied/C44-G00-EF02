@@ -13,7 +13,7 @@ namespace C44_G00_EF02.Models
         public string? Grade { get; set; }
 
         // Navigation Properties
-        public Student Student { get; set; } 
-        public Course Course { get; set; }
+        public virtual Student Student { get; set; } 
+        public virtual Course Course { get; set; }
     }
 }

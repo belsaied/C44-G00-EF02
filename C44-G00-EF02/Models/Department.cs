@@ -14,8 +14,8 @@ namespace C44_G00_EF02.Models
         public DateTime HiringDate { get; set; }
 
         // Navigation Properties
-        public Instructor? Manager { get; set; }
-        public ICollection<Student> Students { get; set; } = new HashSet<Student>();
-        public ICollection<Instructor> Instructors { get; set; } = new HashSet<Instructor>();
+        public virtual Instructor? Manager { get; set; }
+        public virtual ICollection<Student> Students { get; set; } = new HashSet<Student>();
+        public virtual ICollection<Instructor> Instructors { get; set; } = new HashSet<Instructor>();
     }
 }

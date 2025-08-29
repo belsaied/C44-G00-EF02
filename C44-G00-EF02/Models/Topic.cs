@@ -12,6 +12,6 @@ namespace C44_G00_EF02.Models
         public string Name { get; set; }
 
         // Navigation Properties
-        public ICollection<Course> Courses { get; set; } = new HashSet<Course>();
+        public virtual ICollection<Course> Courses { get; set; } = new HashSet<Course>();
     }
 }

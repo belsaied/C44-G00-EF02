@@ -13,7 +13,7 @@ namespace C44_G00_EF02.Models
         public string? Evaluate { get; set; }
 
         // Navigation Properties
-        public Instructor Instructor { get; set; }
-        public Course Course { get; set; }
+        public virtual Instructor Instructor { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

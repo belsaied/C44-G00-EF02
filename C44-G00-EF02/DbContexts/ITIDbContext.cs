@@ -14,6 +14,7 @@ namespace C44_G00_EF02.DbContexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=localhost;DataBase=ITI;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseLazyLoadingProxies();
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
